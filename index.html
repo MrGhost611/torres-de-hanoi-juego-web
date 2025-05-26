@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Torres de Hanói</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <a href="https://www.unicesar.edu.co/" class="logo-link">
+            <img src="Img/logo.png" alt="Logo" class="logo">
+        </a>
+
+        <audio id="bgMusic" src="Sonidos/Fondo.mp3" loop preload="auto"></audio>
+        <button id="soundToggle" class="sound-btn" onclick="toggleSound()"> 
+            <i class="fas fa-volume-up"></i>
+        </button>
+
+        <div class="titulo">
+            <h1>TORRES DE HANÓI</h1>
+            <div class="title-decoration"></div>
+        </div>
+
+        <div class="controls">
+            <label for="diskCount">Número de discos:</label>
+            <input type="number" id="diskCount" min="3" max="6" value="3">
+
+            <div class="button-group">
+                <button onclick="startGame()" class="btn-primary">
+                    <i class="fas fa-play"></i> Iniciar Juego
+                </button>
+                <button id="resolverBtn" onclick="resolver()" class="btn-secondary">
+                    <i class="fas fa-robot"></i> Resolver
+                </button>
+                <button onclick="resetGame()" class="btn-danger">
+                    <i class="fas fa-redo"></i> Reiniciar
+                </button>
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="info-item">
+                <i class="fas fa-arrows-alt"></i>
+                <p>Movimientos: <span id="moveCounter">0</span></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-trophy"></i>
+                <p>Mínimos: <span id="minMoves">0</span></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <p>Tiempo: <span id="timer">0</span>s</p>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="tower-container">
+                <div class="tower" id="tower1"></div>
+                <div class="tower" id="tower2"></div>
+                <div class="tower" id="tower3"></div>
+            </div>
+            <div class="tower-bases"></div>
+        </div>
+
+        <div id="victoryMessage" class="victory-message" style="display: none;"></div>
+
+        <audio id="moveSound" src="Sonidos/move.mp3" preload="auto"></audio>
+        <audio id="victorySound" src="Sonidos/win.mp3" preload="auto"></audio>
+        <audio id="errorSound" src="Sonidos/error.mp3" preload="auto"></audio>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h4><span class="tech-text">{</span>MrGhost<span class="tech-text">}</span></h4>
+                <p>© 2025 <span class="brand">Torres de Hanói</span> - Todos los derechos reservados</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/MrGhost611" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fas fa-gamepad"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-tech-decoration">
+            <div class="tech-line"></div>
+            <div class="tech-line"></div>
+            <div class="tech-line"></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
