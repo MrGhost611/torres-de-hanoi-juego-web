@@ -1,0 +1,2 @@
+Contiene:
+- Logo (Mi Universidad)
